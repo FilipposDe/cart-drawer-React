@@ -9,7 +9,7 @@ const style = `
         padding: 0 1.5rem;
         border: 0.1rem solid rgba(var(--color-foreground), 0.2);
         border-right: 0;
-        background-color: rgb(var(--color-background));
+        background-color: rgb(var(--color-background)); 
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -17,7 +17,7 @@ const style = `
 
     #react-cart h2 {
         text-align: center;
-        margin-top: 50px;
+        margin-top: 50px; 
         margin-bottom: 0;
     }
     #react-cart .drawer {
