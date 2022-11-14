@@ -1,6 +1,6 @@
 dev:
-    # api_key: API_KEY_OF_YOUR_PARTNER_STORE<replace>
-    # password: PASSWORD_OF_YOUR_PARTNER_STORE<replace>
-    store: testerfil2.myshopify.com
-    theme_id: 122049429539
+    api_key: API_KEY_OF_YOUR_PARTNER_STORE<replace>
+    password: PASSWORD_OF_YOUR_PARTNER_STORE<replace>
+    store: STORE_NAME<replace>
+    theme_id: THEME_ID<replace>
     directory: build
