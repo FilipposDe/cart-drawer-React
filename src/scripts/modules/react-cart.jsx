@@ -49,6 +49,8 @@ const style = `
         list-style: none;
         padding: 50px 10px;
         margin: 0;
+        max-height: 68vh;
+        overflow: auto;
     }
     #react-cart ul li {
         padding: 0;
@@ -150,14 +152,18 @@ function CartItem(props) {
 }
 
 function CartDrawer() {
-	const [show, setShow] = useState(true)
 	const [items, setItems] = useState([])
+	const [loading, setLoading] = useState(false)
 
 	useEffect(() => {
 		async function fetchCart() {
-			const res = await fetch('/cart.js')
-			const cart = await res.json()
-			setItems(cart.items)
+			setLoading(true)
+			try {
+				const res = await fetch('/cart.js')
+				const cart = await res.json()
+				setItems(cart.items)
+			} catch (error) {}
+			setLoading(false)
 		}
 
 		fetchCart()
@@ -175,11 +181,10 @@ function CartDrawer() {
 			}),
 		})
 		const cart = await res.json()
-		console.log(cart)
 		setItems(cart.items)
 	}
 
-	if (!show) return null
+	if (loading) return null
 
 	return (
 		<div class='drawer'>
@@ -253,7 +258,11 @@ function CartDrawer() {
 						className='close-cart drawer__close'
 						type='button'
 						aria-label='Close'
-						onClick={() => setShow(false)}
+						onClick={() =>
+							document
+								.querySelector('#react-cart')
+								.classList.remove('react-cart--open')
+						}
 					>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'

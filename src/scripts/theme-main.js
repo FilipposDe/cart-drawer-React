@@ -1,3 +1,10 @@
-import ReactCart from '~mod/react-cart';
+import ReactCart from '~mod/react-cart'
 
-ReactCart();
+window.ReactCart = ReactCart
+
+ReactCart()
+
+window.openReactCart = function (e) {
+	e.preventDefault()
+	document.querySelector('#react-cart').classList.add('react-cart--open')
+}
