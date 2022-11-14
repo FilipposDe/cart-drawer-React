@@ -30,6 +30,10 @@
     {% render 'meta-tags' %}
 
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+<<<<<<< HEAD
+=======
+    <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+>>>>>>> master
     {{ content_for_header }}
 
     {%- liquid
@@ -219,6 +223,11 @@
       {{ "accessibility.skip_to_text" | t }}
     </a>
 
+<<<<<<< HEAD
+=======
+    <div id='react-cart'></div> 
+
+>>>>>>> master
     {%- if settings.cart_type == 'drawer' -%}
       {%- render 'cart-drawer' -%}
     {%- endif -%}
